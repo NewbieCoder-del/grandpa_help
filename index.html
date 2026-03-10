@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elderly-Friendly E-Governance Portal</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header>
+      <div class="topbar">
+        <div class="logo">Elderly Digital Service Portal</div>
+        <nav aria-label="Main Navigation">
+          <ul>
+            <li><a href="index.html" class="active-link">Home</a></li>
+            <li><a href="pages/services.html">Services</a></li>
+            <li><a href="pages/system.html">Architecture</a></li>
+            <li><a href="pages/about.html">About</a></li>
+            <li><a href="pages/team.html">Team</a></li>
+            <li><a href="pages/references.html">References</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" class="container">
+      <section class="hero">
+        <h1>Elderly-Friendly E-Governance Portal for Inclusive Digital Services</h1>
+        <p>Simplified and secure public service access with guided workflows, voice guidance, and elderly-focused accessibility.</p>
+        <button class="btn btn-accent" id="kioskToggle">Enable Kiosk Mode</button>
+      </section>
+
+      <section class="controls-panel" aria-labelledby="accessibility-title">
+        <h2 id="accessibility-title">Accessibility Control Panel</h2>
+        <div class="control-row"><label for="toggleTextSize">Increase text size</label><input type="checkbox" id="toggleTextSize" /></div>
+        <div class="control-row"><label for="toggleContrast">High contrast mode</label><input type="checkbox" id="toggleContrast" /></div>
+        <div class="control-row"><label for="toggleVoice">Voice guidance</label><input type="checkbox" id="toggleVoice" checked /></div>
+        <div class="control-row"><label for="toggleDark">Dark mode</label><input type="checkbox" id="toggleDark" /></div>
+        <div class="control-row">
+          <label for="languageSelector">Language</label>
+          <select id="languageSelector">
+            <option value="en">English</option>
+            <option value="hi">Hindi (Placeholder)</option>
+          </select>
+        </div>
+        <button class="btn btn-muted" id="resetAccessibility">Reset Accessibility Settings</button>
+      </section>
+
+      <section>
+        <h2>Main Dashboard</h2>
+        <div class="grid" id="dashboardGrid"></div>
+      </section>
+
+      <section id="workflowPanel" class="workflow card" aria-live="polite">
+        <h2 id="workflowTitle">Service Workflow</h2>
+        <p id="workflowStepLabel"></p>
+        <div class="progress"><div class="progress-bar" id="workflowProgress"></div></div>
+        <div id="workflowContent"></div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
+          <button class="btn btn-primary" id="nextStepBtn">Next Step</button>
+          <button class="btn btn-muted" id="cancelWorkflowBtn">Cancel</button>
+        </div>
+      </section>
+
+      <section class="alert">
+        <strong>⚠ Security Reminder:</strong>
+        <p>Never share your OTP with anyone. Government officials will never ask for your password.</p>
+      </section>
+    </main>
+
+    <div class="voice-fab"><button id="voiceCommandBtn" aria-label="Start voice command">🎤</button></div>
+
+    <aside class="chatbot" aria-label="Sahayak Chatbot">
+      <div class="chatbot-header">
+        <strong>Sahayak</strong>
+        <button id="chatToggle" class="btn btn-muted">Chat</button>
+      </div>
+      <div class="chatbot-body" id="chatBody">
+        <div class="messages" id="chatMessages"></div>
+        <div class="chatbot-input">
+          <input id="chatInput" type="text" placeholder="Ask Sahayak for help..." />
+          <button class="btn btn-primary" id="chatSend">Send</button>
+        </div>
+      </div>
+    </aside>
+
+    <footer><p>Inclusive Digital Services Prototype • College Engineering Project</p></footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/accessibility.js"></script>
+    <script src="js/security.js"></script>
+    <script src="js/voice.js"></script>
+    <script src="js/chatbot.js"></script>
+  </body>
+</html>
